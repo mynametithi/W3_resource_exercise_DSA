@@ -1,34 +1,34 @@
-#include <iostream> // Preprocessor directive to include the input/output stream header file
-#include <math.h>   // Preprocessor directive to include the math functions header file
+#include <iostream>
+#include <math.h>
 
-using namespace std; // Using the standard namespace to avoid writing std::
+using namespace std;
 
-int main() // Start of the main function
+int main()
 {
-    int num1, num2;       // Declaration of integer variables 'num1', 'num2'
-    int fnd = 0, ctr = 0; // Initialization of integer variables 'fnd' and 'ctr' to zero
+    int num1, num2;
+    int fnd = 0, ctr = 0;
 
-    cout << "\n\n Find prime number within a range:\n"; // Display a message indicating the purpose
-    cout << "--------------------------------------\n"; // Display a separator line
-    cout << " Input number for starting range: ";       // Prompting the user to input the starting range
-    cin >> num1;                                        // Reading the starting range entered by the user
-    cout << " Input number for ending range: ";         // Prompting the user to input the ending range
-    cin >> num2;                                        // Reading the ending range entered by the user
+    cout << "\n\n Find prime number within a range:\n";
+    cout << "--------------------------------------\n";
+    cout << " Input number for starting range: ";
+    cin >> num1;
+    cout << " Input number for ending range: ";
+    cin >> num2;
 
-    cout << "\n The prime numbers between " << num1 << " and " << num2 << " are:" << endl; // Display a message indicating the range of numbers
-    for (int i = num1; i <= num2; i++)                                                     // Loop through each number within the given range
+    cout << "\n The prime numbers between " << num1 << " and " << num2 << " are:" << endl;
+    for (int i = num1; i <= num2; i++)
     {
-        for (int j = 2; j <= sqrt(i); j++) // Loop to check for prime numbers
+        for (int j = 2; j <= sqrt(i); j++)
         {
-            if (i % j == 0) // Checking if the number is divisible by 'j'
-                ctr++;      // Incrementing 'ctr' if 'i' is divisible by 'j'
+            if (i % j == 0)
+                ctr++;
         }
-        if (ctr == 0 && i != 1) // Checking if 'ctr' is zero and 'i' is not equal to 1 (prime numbers should not be 1)
+        if (ctr == 0 && i != 1)
         {
-            fnd++;            // Incrementing 'fnd' as a prime number is found
-            cout << i << " "; // Display the prime number
+            fnd++;
+            cout << i << " ";
         }
-        ctr = 0; // Resetting 'ctr' to zero for the next iteration
+        ctr = 0;
     }
     cout << "\n\n The total number of prime numbers between " << num1 << " to " << num2 << " is: " << fnd << endl; // Display the total count of prime numbers found
     return 0;                                                                                                      // Indicating successful completion of the program
